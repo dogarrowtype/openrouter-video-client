@@ -13,7 +13,7 @@ STAMP_FILE="$VENV_DIR/.requirements.sha256"
 OUTPUT_DIR="${OUTPUT_DIR:-$SCRIPT_DIR/output}"
 
 find_python() {
-    for candidate in python3.12 python3.11 python3.10 python3; do
+    for candidate in python3.13 python3.12 python3.11 python3.10 python3; do
         if command -v "$candidate" >/dev/null 2>&1; then
             ver=$("$candidate" -c 'import sys; print("%d.%d" % sys.version_info[:2])')
             major=${ver%.*}; minor=${ver#*.}
